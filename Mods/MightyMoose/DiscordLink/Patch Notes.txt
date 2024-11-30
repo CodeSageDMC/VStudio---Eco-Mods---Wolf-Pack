@@ -1,0 +1,515 @@
+******
+3.5.1
+******
+--- Important Notes ---
+* Removed DL prefix from config file names.
+ - Go to "Storage/Mods/DiscordLink" and rename the files to "PersistentData.json" and "WorldData.json".
+* Updated Discord interface library DSharpPlus to version 4.5.
+
+--- Improvements ---
+* Added Map Display module - Keeps an updated preview link to the map image.
+* Added Layer Display module - Keeps an updated preview link to the requested layer image.
+* Added support for reference messages in the Discord chat feed module.
+* Added ShowMap Command - Posts a link to the map preview image.
+* Added ShowWorldHistory Command - Posts a link to the map history gif.
+* Added ShowLayer Command - Posts a link to the requested layer image.
+* Added ReloadConfig command - Reloads the plugin config.
+* Added mod registration.
+* Added deferred handling of commands that may take more than 3 seconds to complete.
+* Added exception printouts when a command triggers an exception.
+* Added support for a command output to be split into multiple messages if it is too long.
+* Added support for UnlinkAccount command to Discord.
+* Improved embed formatting when a field is split because it is too long.
+* Improved Webpage Address field in server status Module messages with a fallback to IP & port.
+* Removed CommandChannel functionality since Discord now supports this natively.
+
+--- Bugfixes ---
+* Fixed embeds failing to send because of miscalculations of the total character length.
+* Fixed tags being included in /Trades output.
+* Fixed outdated references to /DL-TradeWatchers command.
+* Fixed Discord chat feed module using the wrong color for Discord names.
+* Fixed display modules attempting to update deleted messages.
+* Fixed PlayerReport command parameter dropdown not showing Experience as an option and having Reputation duplicated.
+* Fixed nullref when posting embeds without footers.
+
+******
+3.5.0
+******
+--- Important Notes ---
+* DiscordLink has been folded into the MightyMoose mod group as it depends on MooseCore and is developed by the staff of the MightyMoose server.
+* Install location moved to Mods/MightyMoose/DiscordLink.
+* Some dependencies moved to Mods/MightyMoose/Dependencies.
+* Account links using only SLGID will no longer be valid as they have been deprecated by Eco.
+
+--- Improvements ---
+* Added compatibility for Eco 0.11.0.0.
+* Added role synchronization for elected titles.
+* Added "PersistentStorageData" and "WorldStorageData" commands for inspecting storage data.
+* Added pruning of linked users that have left the Discord server.
+* Added ingame feedback when verifying account link.
+* Merged all announcement commands into a single parameterized "/announce" command.
+* Improved /LinkInformation command output to be more clear.
+* Improved formatting of ingame output for commands shared between Eco and Discord.
+
+--- Bugfixes ---
+* Fixed it being possible to vote in elections while not being eligable for that election.
+* Fixed exhaustion reset time not being correct if the new consistent time setting in the Eco server was set.
+* Fixed demographic roles being added for demographics from non-founded settlements.
+* Fixed role references being kept for roles that have been removed from outside of DiscordLink and causing error logs.
+* Fixed roles for demographics and specialities being applied on account linking even if the feature was off
+* Fixed NullReferenceException when adding special demographic roles (Everyone, admin, abandoned etc).
+* Fixed formatting issues in embeds by removing ServerLogo functionality and config parameter.
+
+******
+3.4.2
+******
+--- Improvements ---
+* Added compatibility for Eco 0.10.2.0.
+* Fixed a potential permissions exploit when combined with EM.Framework.
+
+******
+3.4.1
+******
+--- Improvements ---
+* Added compatibility for Eco 0.10.1.4.
+
+******
+3.4.0
+******
+--- Important Notes ---
+* The dependency EcoWorldCore.dll has been renamed MightyMooseCore.dll. Make sure to delete EcoWorldCore.dll.
+* The "DebugVerbose" log level has been renamed to "Trace".
+
+--- Improvements ---
+* Added a Settlement list component to the Server Info display.
+* Added Settlement information to election embeds.
+* Added Settlement information to Law and Election lists.
+* Added sorting based on settlement influence to Law and Election lists.
+* Added EcoSnippet command to Discord for sending a snippet to Eco.
+* Added Version command for checking the installed and latest mod version available.
+* Added documentation command.
+* Changed channel dropdown sorting to use the same ordering as in Discord rather than sorting by name.
+* Improved log feedback when the bot lacks permission to manipulate roles.
+* Improved debug logging.
+
+--- Bugfixes ---
+* Fixed an issue that could cause a server crash in when creating Eco chat channels if there were corrupted users on the server.
+* Fixed commands sending various types of message boxes to users, returning false if successful and vice versa.
+* Fixed Snippet command not behaving as documented in the Discord command description.
+* Fixed a nullreferenceexception when changing the config while disconnected from Discord.
+* Fixed version printouts using 4 version components rather than 3.
+* Fixed Discord discriminators still being used in some cases despite being obsoleted by Discord.
+* Fixed descriptions for linking and unlinking account using an outdated command name.
+
+******
+3.3.2
+******
+* Fixed the asset bundle conflicting with other mods.
+
+******
+3.3.1
+******
+--- Important Notes ---
+* The DSharp version has been rolled back and therefore you should delete the files "Polly.Core.dll" and "Polly.dll".
+* Updated to EcoWorldCore 1.0.1.
+
+--- Improvements ---
+* Made it less likely to time out before a connection was established. (R3sist3nt)
+* Improved some error messages with suggestions on what could be causing the errors. (R3sist3nt)
+* Reworked the Server Log Feed to post the accumulated log messages once per second instead of posting once for each message.
+
+--- Bugfixes ---
+* Fixed DSharp failing to soft rate limit, causing Discord to temporarily block the bot.
+* Fixed exceptions not being printed to the console.
+* Fixed nullref exceptions that would occur when attempting to select channels in the GUI while the plugin wasn't connected to the Discord server. (R3sist3nt)
+* Fixed storage files getting reset on each server restart.
+* Fixed the ConnectionInfo config field defaulting to using a link while Discord has removed functionality for these types of links.
+* Fixed displays using long fields sometimes failing to post.
+* Fixed permission check sometimes passing even though the bot didn't have the requested permission.
+* Fixed nullref exceptions on shutdown if the plugin was disconnected. (R3sist3nt)
+* Fixed crafting feeds not working.
+
+******
+3.3.0
+******
+--- Important Notes ---
+* Replaced EM.Framework dependency with EcoWorldCore.
+* The "DiscordServer" config field has been replaced by "DiscordServerID" and is now required to be an ID. This is part of the move to SlashCommands.
+* Any application or bot utilizing a name containing the word "Discord" will no longer work correctly and need to be renamed. This is a change made by Discord.
+* All Discord commands have been replaced by SlashCommands. The prefix for Discord commands is now / and utilizes auto completion. Commands can no longer be issued in DMs with the bot.
+* Almost all global command aliases have been removed as Eco now support the use of local command aliases. There have been many changes to commands. See the command documentation for details: https://github.com/Eco-DiscordLink/EcoDiscordPlugin/blob/develop/Commands.md.
+
+--- Additions ---
+* Added support for handling Discord custom emotes and substituting them for custom icon names.
+* Added a "ServerShutdown" command for Discord, which triggers a graceful server shutdown.
+* Added the ability to force an update of all DiscordLink modules via the server GUI dropdown.
+* Added functionality for allowing users to opt out of chat message synchronization.
+* Added a dropdown for selecting Discord channels to the server GUI
+
+--- Improvements ---
+* The ingame DiscordLink user has been removed. DiscordLink now sends messages for unlinked accounts using their Discord name only and uses linked accounts where one exists.
+* Added a DiscordLink icon to the beginning of all messages sent from Discord.
+* All PlayerReport commands have been refactored and now take a parameter for which report type the user wants to request.
+* Renamed the "Restart" command to "RestartPlugin".
+* Changed the naming scheme for message forwarding commands.
+* The /Echo command now defaults to using the chat link for the channel in which the command was issued, if possible.
+* Replaced the "PluginStatusVerbose" command with a parameter for the "PluginStatus" command.
+
+--- Bugfixes ---
+* Fixed account link role being created even if the setting for it was off.
+* Fixed reports including Housing XP not working.
+* Fixed exceptions being thrown when modules attempted to update while the plugin was starting or shutting down.
+* Fixed skill progress percent on reports always being 0.
+* Fixed several issues related to linked accounts for users that had no SLG account.
+
+******
+3.2.0
+******
+--- Improvements ---
+* Improved overall stability for module updates.
+
+--- Bugfixes ---
+* Fixed an issue making the bot unable to read messages in Discord.
+* Fixed an issue related to sending DM:s to users who have blocked DMs.
+* Fixed the Server Time field of the Server Info Display using local time.
+* Fixed webserver URLs being malformed.
+* Reworked module handling to avoid module duplication (related to the duplication bugs).
+
+******
+3.1.0
+******
+--- Additions ---
+* Added ExecuteEcoCommand command for running Eco commands from Discord.
+* Added an option for prefixing timestamps to all chatlink messages.
+* Added "DL-Update" command for forcing an immeadiate update of all active modules.
+* Added "DL-ClearRoles" command for clearing out all Discord roles created by DiscordLink.
+
+--- Improvements ---
+* The Server Info Display now utilizes Discord timestamps.
+* The /DLT command now takes authorization into account when coloring and sorting trade entries.
+* Removed the timestamp from the Server Info Display title as it was redundant.
+* Removed "WebServerAddress" config field as the same option is now available in the vanilla Network.cfg config file.
+
+--- Bugfixes ---
+* Fixed modules being duplicated on plugin restart - This fixes chat message duplication.
+* Fixed roles not being assigned when created.
+* Fixed chatlinks beyond the first one not being used (Thanks Lord-Helmchen!)
+* Fixed display config updates not taking effect until plugin restart.
+* Fixed Server Info Display displaying incorrect meteor info after the meteor was destroyed.
+* Fixed Server Log Feed being called "Server Status Feed" in the Server GUI display.
+* Fixed multiple time outputs not handling values over 24 hours.
+* Fixed "internal server errors" generated by Discord being thrown as warnings in the server log.
+* Fixed a crash that could occur at server startup.
+
+******
+3.0.0
+******
+--- Important Notes ---
+* The config has had many changes to simplify setup, add new features and rework existing ones. It is advised to create a new config file. Existing configs WILL NOT WORK!
+* This update is pretty massive. The reason for this is that a lot of the basic functionality of the plugin has been reworked to improve stability and better facilitate future development. Future updates will arrive in smaller batches.
+* Chat logging functionality has been removed as this is now a feature in the base game.
+* The plugin has been reworked to target a single Discord server for ease of setup and development.
+* The config evaluation is no longer printed when the config is changed. Use the added VerifyConfig and VerifyPermissions commands or the GUI dropdown to trigger config evaluation.
+* The plugin no longer automatically restarts when you change the bot token. Use restart commands or dropdown options to restart the plugin after changing the bot token.
+
+--- Linked Accounts ---
+* Fixed account linking failing in many cases.
+* Replaced the ?verifylink command with reaction buttons.
+* Added election reaction voting.
+* Added trade watcher feeds - See filtered trades in real time in bot DMs.
+* Reworked watched trades into trade watcher displays.
+
+--- Roles ---
+* Added Discord role assignment for users who have linked their accounts.
+* Added ingame specialties synchronization to roles in Discord.
+
+--- Displays ---
+* Added exhaustion information to Server Info Display.
+* Added additional customization for the Currency Display.
+* Added Web Server Url to election display message.
+* Added Webpage Address Link to Server Info.
+* Removed redundant PlayerDisplay module.
+* Replaced "Meteor Has Hit" component of Server Info display with a "Server Time" component.
+* Fixed election list component in Server Info showing empty fields.
+* Fixed player list component of Server Info causing misalignment.
+* Fixed creators list in Server Info law component not being split into multiple lines.
+* Fixed missing newlines in Server Info message.
+* Updated online Player Count component of Server Info to avoid confusion regarding server max slots.
+* Server info channel links now show player count by default.
+
+--- Feeds ---
+* Added server log feed.
+* Fixed chat channel feed only being able to communicate between channels using the same name.
+
+--- Commands ---
+* Added admin override to Discord command channel requirements.
+* Added VerifyConfig and VerifyPermissions commands for troubleshooting setup issues.
+* Added many commands for generating reports.
+* Added DL-LinkInfo command to Eco and Discord for showing information about account linking.
+* Added support for referencing players by ID in message commands.
+* Added buy/sell limits to Eco trades command.
+* Added sorting of eco trade command output lines based on entry status.
+* Added support for searching for specific stores with the trades command.
+* Fixed barter stores causing exceptions in the trades command.
+* Fixed Discord trades command duplicating the name of the matched item.
+* Fixed DiscordLink trades command not always finding store entries for tools.
+* Fixed BroadvastInvite commands erronously asking for a channel name parameter.
+* Fixed invite link token config being case sensitive.
+* Fixed failing command executions that fail due to being in the wrong channel reporting IDs instead of channel names if the config uses IDs.
+* Fixed capitalization of default admin command roles so that they display properly in Discord command execution failure messages.
+* Fixed it not being possible to execute some commands from Discord DMs.
+* Renamed Reset command => ResetWorldData.
+
+--- Miscellaneous Improvements ---
+* Added server GUI dropdown options for config verification, permissions verification and plugin restart.
+* Added console text coloring.
+* Added configurable automatic enabling/disabling of the standard embed footer based on embed size.
+* Added config variable UseVerboseDisplay for controlling if the server GUI display output should be verbose.
+* Fixed plugin restarts not being allowed if the bot token was not set up.
+* Shortened time annotations to a single character in order to keep them on one line in embeds.
+* Made channel links print the actual channel name instead of ID if the link is valid.
+
+******
+2.2.3
+******
+Added compatibility with EM-Framework 2.2.3
+
+******
+2.2.2
+******
+--- Additions ---
+* Added support for Eco 9.4
+* Added colored logging printouts.
+* Added Elixir Mods versioning system.
+
+--- Bugfixes & Improvements ---
+* Moved PluginLog to the logs subdirectory.
+
+******
+2.2.1
+******
+--- Bugfixes & Improvements ---
+* Fixed a crash that would occur if snippets with duplicate keys were added.
+* Fixed Restart command not working.
+* Fixed linked users sometimes getting lost when the server was restarted or a new link was added.
+* Fixed missing newline in the Server GUI Display.
+* Clarified text in the embed footer.
+* Moved em-framework.dll to "Mods/Elixir Mods".
+* Updated em-framework.dll to version 2.2.1.
+
+******
+2.2.0
+******
+--- Additions ---
+* Added Eco <==> Discord account linking.
+* Added Crafting Feed.
+* Added Currency Display.
+* Added Trade Tracker Display.
+* Added active election information to the Server Info Display.
+* Added law information to the Server Info Display.
+* Added info about attachments in Discord messages being forwarded to Eco.
+* Added footer with meta data for Display messages.
+* Added optional "logged in time" Display for users in the Player List Display.
+* Added configurable list of Discord roles that DiscordLink should consider admins.
+* Added Discord Command Channels
+ - If one or more Discord Command Channels are configured, the bot will only listen for user commands in these channels. Admin users can override this rule.
+* Added user command "Trades <UserOrItemName>" to Eco.
+	- Works like the ?trades command in Discord, but displays the information in Eco.
+* Added admin command "ResetWorldData" to Eco and Discord.
+	- Deletes all data stored in the WorldData.JSON file. This command does the same data cleanup in DiscordLink as when a new world is created.
+* Added admin command "SendAnnouncement <Title> <Message> <Player>" to Eco and Discord
+	- Sends an announcement message box to the target user.
+* Added admin command "BroadcastAnnouncement <Title> <Message>" to Eco and Discord
+	- Sends an announcement message box to all online users.
+* Added admin command "SendPopup <Message> <Player>" to Eco and Discord
+	- Sends a popup message to the target user.
+* Added admin command "BroadcastPopup <Message>" to Eco and Discord
+	- Sends a popup message to all online users.
+* Added admin command "SendServerMessage <Message> <Player>" to Eco and Discord
+	- Sends a server message to the target user.
+* Added admin command "BroadcastServerMessage <Message>" to Eco and Discord
+	- Sends a server message to all online users.
+* Added admin commands "PluginStatus" and "PluginStatusVerbose" to Eco and Discord.
+	- Prints data about the state of the running DiscordLink instance.
+
+--- Bugfixes & Improvements ---
+* Fixed a crash that would occur if a command for sending server messages was sent via DM to the bot.
+* Fixed a crash that would occur if a user send a DM to the bot while Snippet input was enabled.
+* Fixed a crash that could occur if logging was used from multiple threads simultaniously.
+* Fixed a crash that could occur if a work party reward was not associated to a work party (Eco bug?)
+* Fixed the echo command failing to actually echo the command back in a chat link channel.
+* Fixed the echo command using the [echo] tag instead of the command token in an error message.
+* Fixed commands not being executed if sent in a DM to the bot.
+* Fixed logs being written to the wrong path on Linux.
+* Fixed Work Party Display using an excessive amount of decimals in reward descriptions.
+* Fixed the Invite command not providing feedback when executed from Eco.
+* Fixed the Election Display not respecting anonymous voting.
+* Fixed several issues with bartering stores and trade related functionality of DiscordLink.
+* Fixed several instances where tags weren't stripped when sending Eco data to Discord.
+* Added log printout for when the "Restart" command is executed.
+* Added the plugin version to the "About" command.
+* Added port number to Server Info Display Connection Info.
+* Added aliases "trade" and "dlt" to the Trades command.
+* Changed Trade Feed to use the store name instead of store owner name.
+* Changed the ServerStatus Discord command alias from "dl-status" to "dl-ecostatus".
+* Changed "Time Since Start" to "Current Time" in Server Info Display.
+	- This change was made in order to be consistent with ingame time counting. This means that time counting now starts at Day 1 instead of "0 days elapsed".
+* Server log will not warn if features requiring Discord Guild Members intent are used without the intent being enabled for the bot.
+	- The Discord Guild Members intent is currently needed only for linking Discord accounts to server users.
+* Improved readability of Eco forwarded messages in Discord.
+* Improved the accuracy of the Player List Display.
+* Player Lists in Server Info and Player List displays are now sorted alphabetically.
+* Modules will no longer run if there are no valid targets for them to post messages in.
+	- This improves stability and allows server owners to turn off features that cause issues when the server is updated with breaking changes to DiscordLink.
+* Renamed "Server Address" in Server Info Display to "Connection Info".
+* Messages and embeds that exceed the allowed size in Discord will now be split up and sent as multiple messages.
+	- This is not yet supported for Displays.
+* Reversed the order to buy and sell orders in Discord trades command output.
+	- This change was made in order to be consistent with the ingame dl-trades command.
+
+--- Config Changes ---
+- "EcoCommandChannel" has been renamed "EcoCommandOutputChannel".
+- "UseAddress" field in Server Info has been renamed "UseConnectionInfo".
+- "UseStartTime" field in Server Info has been renamed "UseCurrentTime".
+
+--- Notes ---
+* All data files have been moved to /Configs/Mods/DiscordLink.
+	- Previous versions of DiscordLink only stored logs in the mods directory.
+	As some server hosts now expect mods to only have DLL files under the mod directory, I would recommend that you delete your previous DiscordLink folder from /Mods and create a new one using this version.
+	Your config will remain intact as it is located under /Configs.
+* Any Discord users with the roles "admin", "administrator" or "moderator" will by default have access to admin level Discord commands.
+* Added dependency System.Threading.Timer.
+* Updated em-framework to version 2.1.2.
+	- This fixes the issue with admin commands not being logged properly.
+* Updated DSharpPlus to version 4.0.0-rc1.
+
+--- Known Issues ---
+* Display messages over the message length cap will not handle message splitting properly.
+https://github.com/Eco-DiscordLink/EcoDiscordPlugin/issues/27
+
+******
+2.1.1
+******
+--- Bugfixes & Improvements ---
+* Fixed election display that got broken in the Eco 9.1 update.
+* Fixed potential crash on plugin log writing.
+* Fixed link validation not being executed for Snippet channels.
+* Fixed bot name erroneously defaulting to bot token.
+* Fixed issue where the bot user would not be created if the not name was not configured.
+* Toned down some of the logging that the user generally can't do anything about.
+
+******
+2.1.0
+******
+--- Additions ---
+* Added Discord Snippet Input feature.
+	- This feature allows you to define messages in Discord that can be posted into Eco using the /Snippet command.
+	- More information at: https://github.com/Eco-DiscordLink/EcoDiscordPlugin/blob/develop/IntegrationTypes.md#snippets
+* Added Work Party Display feature.
+	- This feature lets you view active work parties in Discord.
+	- More information at: https://github.com/Eco-DiscordLink/EcoDiscordPlugin/blob/develop/IntegrationTypes.md#work-parties
+* Added Election Display feature.
+	- This feature lets you view active elections in Discord.
+	- More information at: https://github.com/Eco-DiscordLink/EcoDiscordPlugin/blob/develop/IntegrationTypes.md#elections
+* Added parent Eco command "DiscordLink".
+	- All DiscordLink Eco commands are now subcommands to the DsicordLink command.
+* Added Eco and Discord "About" command.
+	- This command prints a text describing what DiscordLink is and links to the documentation.
+* Added Discord "Print" command.
+	- This command echoes the inputted string.
+	- This command is useful for making the bot output Display tags in the order you wish them to have them in a channel.
+* Added Eco and Discord "Restart" command.
+	- This command restarts the plugin.
+	- Resources that are only read on server restart (such as DLL files) will not be updated.
+* Added Rules for allowing/disallowing mentions of @everyone and @here.
+	-  Can be configured per Chat Link.
+* Added configuration field for the Eco bot user name.
+	- Requires world reset to take effect.
+* Added options to Chat Links for selecting which direction(s) messages should be forwarded.
+	- Options: EcoToDiscord, DiscordToEco, Duplex.
+* Added file logging for all non-verbose log messages.
+	- The output file is at "Mods/DiscordLink/Pluginlog.txt"
+* Replaced the debug flag with a configurable log level.
+	- Typically, only the plugin log level should be used while the backend one is for troubleshooting.
+* Replaced EcoStatus Display with Server Info Display.
+	- This one is more or less the same as EcoStatus, but will hopefully cerate less confusion with the ?EcoStatus command.
+* Moved Player List out from the Server Info Display and into a separate Player List Display.
+
+--- Bugfixes & Improvements ---
+* Reduced the amount of redundant outputs of config verification when the config is edited via the server GUI.
+* Eco Channel names will now automatically trim any '#' characters at the start of the name.
+* Chat log will now create any missing directory in the given path.
+* Added aliases to many commands in both Eco and Discord.
+* Restructured config to split channel links into Displays, Feeds and Inputs.
+* Fixed Server Info display outputting Eco tags when fetching the Title or Description from Network.Eco.
+* Fixed config verification reporting "All channels verified" when there were zero channel links configured.
+
+--- Notes ---
+* This update makes extensive changes to the config. In order to avoid configuration erros, it is recommended that you recreate your config file.
+* Two more dependencies have been added.
+	- Microsoft.Extensions.Logging.Abstractions: DSharp dependency with a higher version than the one Eco uses.
+	- Nito: Used for improved async handling.
+
+--- Known Issues ---
+* Many emojis get translated wrong when sent from Discord to Eco.
+https://github.com/Eco-DiscordLink/EcoDiscordPlugin/issues/1
+
+* Config verification outputs redundant information when manipulatinng channel links via the server GUI.
+https://github.com/Eco-DiscordLink/EcoDiscordPlugin/issues/11
+
+******
+2.0.1
+******
+--- Bugfixes & Improvements ---
+* Fixed a rare crash that could occur if the Eco Status display was enabled and the Eco server stalled for an extended period of time.
+
+******
+2.0.0
+******
+--- Additions ---
+* Support for Eco 9.0
+  - WOHO!
+
+* Configuration Verification
+Upon startup and configuration changes, DiscordLink will now process your configuration to look for errors.
+The verification runs in two steps, one at the server start and one after all information from Discord has been received.
+Any detected errors will be sent to the server log and errors that can be fixed automatically will be resolved.
+The status of each channel link will be displayed at the end of the full verification pass.
+Configuration verification is also triggered by configuration changes made while the server is running.
+
+* DiscordInvite Command
+A new command for both Eco and Discord that displays a cofigurable message containing the invite link to the Discord server.
+Note that this command requires the Discord Address parameter from the Eco Network config to be set.
+
+* Discord mention/tagging support
+Use @NameOrRole or #ChannelName in Eco to tag users, roles or channels in Discord.
+Usage of the various types of mentions can be allowed or disallowed per channel link.
+
+* Live Eco Server Status Display
+A live updated and configurable display of the ?EcoStatus output can now be housed in a Discord channel.
+
+* Chatlog
+A chatlog that stores all messages sent in the linked channels.
+This feature is off by default and the path of the chatlog is configurable.
+
+--- Bugfixes & Improvements ---
+* Fixed messages from Eco sometimes not being sent to Discord.
+
+* Discord guild(server) and channel names are no longer case sensitive.
+
+--- Notes ---
+* Changed Config Name
+The config name has changed to "DiscordLink.eco".
+This means that your current config file will no longer be recognized.
+As the content of the config file has changed to some extent, we recommend that you do not simply rename your existing configuration file, but rather fill out the new one.
+
+* Multiple DLLs
+DiscordLink has previously been distributed as a single .dll file.
+Due to underlying changes, we will now also distrubute the .dll files of our dependencies. DSharpPlus.dll and DSharplus.CommandsNext.dll should simply be left in the same folder as DiscordLink.dll
+
+--- Known Issues ---
+* The Live Server Status feature may cause crashes if other messages already exist in the Discord channel when the plugin starts
+https://github.com/Spoffy/EcoDiscordPlugin/issues/68
+
+* Chatlog will sometimes fail to write.
+https://github.com/Spoffy/EcoDiscordPlugin/issues/58

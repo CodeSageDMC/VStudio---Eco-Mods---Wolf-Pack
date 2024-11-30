@@ -1,0 +1,170 @@
+Change Log - Bulk Recipes
+
+** Update V11_0.1.9 ** August 19, 2024
+Wooden Ceiling Light, Sawmill - Added Small Bulk
+Wooden Floor Lamp, Sawmill - Added Small Bulk
+Wooden Table Lamp, Sawmill - Added Small Bulk
+Wooden Hull Planks, Small Shipyard - Added Small Bulk
+Dowel, Carpentery Table - added small bulk
+Hewn Log, workbench, removed to be in line with v11
+Hewn log, carpentry table - added dowel to the ingredients 
+Large Festive Paper Lantery, Small Paper Mill - Added Tiny Bulk
+Large Paper Lantery, Small Paper Mill - Added Tiny Bulk
+Small Paper Lantern, Small Paper Mill - Added Tiny Bulk
+Water Wheel, Carpentry Table - Added Small Bulk
+Windmill, Carpentry Table - Added Small Bulk
+Vegetable Stock, Cast Iron Stove - Changed to Tiny Bulk
+Simple Syrup, Mill - Added Tiny Bulk
+Exotic Fruit Salad, Cast Iron Stove - Added Small Bulk
+Mixed Fruit Salad, Cast Iron Stove - Added Small Bulk
+Rainforest Fruit Salad, Cast Iron Stove - Added Small Bulk
+Exotic Salad, Cast Iron Stove - Added Small Bulk
+Forest Salad, Cast Iron Stove - Added Small Bulk
+Grassland Salad, Cast Iron Stove - Added Small Bulk
+Mixed Salad, Cast Iron Stove - Added Small Bulk
+Rainforest Salad, Cast Iron Stove - Added Small Bulk
+Exotic Vegetable Medley, Cast Iron Stove - Added Tiny Bulk
+Mixed Vegetable Medley, Cast Iron Stove - Added Tiny Bulk
+Mushroom Medley, Cast Iron Stove - Added Tiny Bulk
+Simmered Meat, Cast Iron Stove - Added Small Bulk
+Corn Starch, Laboratory - Added Bulk
+Baked Agave, Bakery Oven - Added Small Bulk
+Baked Beet, Bakery Oven - Added Small Bulk
+Baked Corn, Bakery Oven - Added Small Bulk
+Baked Heart of Palm, Bakery Oven - Added Small Bulk
+Baked Meat, Bakery oven - Added Small Bulk
+Baked Taro, Bakery Oven - Added Small Bulk
+Baked Tomato, Bakery Oven - Added Small Bulk
+Camas Bulb Bake, Bakery Oven - Added Small Bulk
+Ink, Paint Mixing Workbench - Added Bulk
+Paper, Small Paper Machine - Added Bulk
+Steel Spring, Blast Furnice - Added Tiny Bulk
+Cooking Utensil, Anvil - Added Tiny Bulk
+Sharpening Steel, Anvil - Added Tiny Bulk
+Iron Saw Blade, Anvil - Added Small Bulk
+Mill Stone, Masonry Table - Added Tiny Bulk
+Whetstone, Masonry Table - Added Tiny Bulk
+Iron Wheel, Wainwright Table - Added Tiny Bulk
+Wooden Wheel, Wainwright Table - Added Tiny Bulk
+Fuse, Electronics Assembly - Added Tiny Bulk
+Course Stone, Tool Bench - Added Tiny Bulk
+Canvas, Loom & Auto Loom - Added Tiny & Small Bulk
+Cotton Canvas, Loom & Auto Loom - Added Tiny & Small Bulk
+Gasoline, Oil Refinery - Added Small Bulk
+Lubricant, Oil Refinery - Added Tiny Bulk
+Polishing Paste, Oil Refinery - Added Tiny Bulk
+Grease (Lubricant), Butchery Table - Added Tiny Bulk
+
+
+
+** Update V10_0.1.8 **  June 14, 2024
+Electric Motor - Electronics Assembly - Added Small Bulk
+Electric Wall Lamp - Electronics Assembly - Added Small Bulk
+Steel Floor Lamp recipe, Robotic Assembly Line - added Small Bulk
+Steel Table Lamp recipe, Robotic Assembly Line - added Small Bulk
+Valve - Electric Machinist Table - Added Small Bulk
+Composite Filler, Farmers Table - added Small Bulk
+Fiber Filler, Farmers Table - added	Small Bulk
+Pulp Filler, Farmers Table - added Small Bulk
+Bread, Bakery Oven - Added Tiny Bulk
+Boiled Sausage, Stove - Added Tiny Bulk
+
+** Update V10_0.1.7 ** 5/23/2024
+Rivet - Blast Furnace - added Power Hammer Requirement, new in 10.2.2
+Rebar - Blast Furnace - added Power Hammer Requirement, new in 10.2.2
+Steel Pipe - Blast Furnace - added Power Hammer Requirement, new in 10.2.2
+Framed Glass - Glassworks - Added Epoxy to the recipe, new in 10.2.3
+
+
+** Update V10_0.1.6 ** 5/4/2024  May the 4th be with you.
+Boards, Workbench - Added
+Particle Board, Sawmill - Added to Boards recipe
+Fish Oil,  - Added a new recipe
+Ashlar, Advanced Masonry - Adjusted the Crushed output 
+Copper Bar, Bloomery - adjusted skill needed
+Copper Pipe, Anvil - adjusted skill needed
+Gold Bar, Bloomery - adjusted skill needed
+Rebar, Blast Furnace - adjusted skill needed
+Rivet, Blast Furnace - adjusted skill needed
+Weave Cotton Fabric, Automatic Loom - adjusted skill needed
+Piston, Screw Press - added
+Steel Bar, Blast Furnace - Adjusted output of Clay molds update 10.2.2
+Nails, Anvil - adjusted experience crafting update 10.2.2
+Steel Axle, Electric Lathe - Added 
+Rubber Wheel, Electric Lathe - Added
+
+
+** Update V10_0.1.5 **
+Barrel - Moved to Rolling Mill and changed to Advanced Smelting Skill
+Copper Pipe - Corrected Crafting Qty was 2 now 1 for standard recipe
+Steel Bar - Changed from Iron Bar to Concentrate, Added Ceramic Mold and changed quantities, only returns 1.5 molds
+Iron Bar - Added Clay Mold to Blast Furnice recipe, only returns 1.5 molds
+Copper Bar - Skill level on Blast Furnice recipe added Clay Molds, only returns 1.5 molds
+Gold Bar - Skill level on Blast Furnice recipe added Clay Molds, only returns 1.5 molds
+Charcoal Steel - Changed from Iron Bar to Concentrate, added Ceramic Mold and changed quantities, only returns 1.5 molds
+Lumber - all 3 changed the Quantities 
+Wet/Shale Brick - Corrected Wooden Mold return quantitiy
+Clay Mold - changed from Small Bulk to Bulk 10x to 25x
+Charcoal - Changed the ingredient quantity was 10 needed to be 25
+Copper Concentrate - Corrected the WetTailing Qty
+Fish Stock - Added Small Bulk Recipe
+Steel Pipe - Corrected the Labor & Time to craft
+
+
+** Update V10_0.1.4 **
+Corrected Ingredient quantity on Arrow Bulk recipe. 
+Steel Saw Blade Bulk	- Added 
+
+** Update V10_0.1.3b **
+Removed Eggs & SunButter from the PastryDough Recipe
+
+** Update V10_0.1.2 **
+Crushed Basalt Bulk - Added
+Crushed Gneiss Bulk - Added
+Crushed Granite Bulk - Added
+Crushed Sandstone Bulk - Added
+Crushed Shale Bulk - Added
+Crushed Slag Bulk - Added
+Crushed Stone Road Bulk - Added
+Clay Mold Bulk - Added New recipe in 10.2
+Ceramic Mold Bulk - Added New recipe in 10.2
+Dense Charcoal Bulk - Added to Charcoal Bulk recipe New recipe in 10.2
+WetBrickBulk moved to Pottery table and changed skill then added ShaleBrickBulk
+Nail Bulk Changed Skill to Blacksmith
+Arrow Bundle Small Bulk - Added New recipe in 10.2
+Quicklime - Corrected ExperienceOnCraft recipe was to high.
+BloodMealFertilizer - spelling correction small spelled incorrectly.
+Asphalt Concrete - increased output to 5x instead of 3x and lowered craft time.
+Iron Concentrate - Corrected LaborInCalories
+
+** First Release V0.10_0.1.1 **
+
+Eco Version 10.1.4 - Mod's Bulk Recipes added
+
+* Carpentry *
+Boards, Charcoal, Composite Lumber, Hewn Log, Lumber & Wooden Mold
+
+* Chef *
+Infused Oil, Leavened Dough, Meat Stock, Melting Fat, Pastry Dough, Refined Tallow (Oil), Render Fat (Tallow) & Vegetable Stock
+
+* Hunter *
+Scrap Meat, Prepared Meat, Prime Cut, Raw Bacon, Raw Roast, Raw Sausage, Shred Kelp & Arrow
+
+*Engineer *
+Electronics - Basic Circuit, Advanced Circuit, Substrate, Gold Flakes, Modern Street Light, Double Modern Street Light, Streetlamp, Steel Ceiling Light
+Oil Drilling - Barrel, Epoxy, Nylon, Plastic, Synthetic Rubber
+Mechanics - Boiler, Copper Plate, Copper Wiring, Gearboxes, Gold Wiring, Heat Sink, Iron Axle, Iron Gears, Iron Plate, Screws, Servo
+Industry - Radiator, Steel Gearboxes, Steel Gears, Steel Plate
+Engineering - Asphalt Concrete, Stone Road, Waterwheel, Wind Turbine, Windmill
+
+* Farmer *
+Flax Fibers, Berry Extract Fertilizer, Blood Meal Fertilizer, Hide Ash Fertilizer, Pelt Fertilizer, Spoiled Food Filler, Acorn Powder, Camas Paste, Cornmeal, Flaxseed Oil, Flour, Huckleberry Extract, Oil, Cotton Seed Oil, Sunflower Oil, Rice Flower, Sugar, Beet Sugar, Yeast
+
+* Mason *
+Brick & Wet Brick (also returns some brick molds back), Cement, Iron Concentrate, Copper Concentrate, Gold Concentrate, Sand Concentrate, Crushed Limestone, Crushed Iron Ore, Crushed Copper Ore, Crushed Gold Ore, Fiberglass, Glass, Quicklime Glass, Framed Glass, Light Bulb, Mortar, (Mortared Stone, Granite, Sandstone, Limestone), Quicklime, Reinforced Concrete
+
+* Smith *
+Iron Bar, Steel Bar, Charcoal Steel Bar, Copper Bar, Gold Bar, Corrugated Steel, Flat Steel, Nails, Rebar, Rivets, Iron Pipe, Copper Pipe, Steel Pipe
+
+* Tailor *
+Cellulose Fibers, Cotton Carpet, Cotton Fabric, Weave Cotton Fabric, Cotton Thread, Linen Fabric, Weave Linen Yarn, Linen Yarn, Nylon Carpet, Nylon Fabric, Nylon Thread, Wool Carpet, Wool Fabric, Weave Wool Fabric, Wool Yarn, Spin Wool Yarn

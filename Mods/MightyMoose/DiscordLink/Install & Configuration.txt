@@ -1,0 +1,2 @@
+Instructions for how to install, configure and use DiscordLink can be found here:
+https://github.com/Eco-DiscordLink/EcoDiscordPlugin

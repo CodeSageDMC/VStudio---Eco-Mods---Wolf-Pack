@@ -1,0 +1,21 @@
+
+
+------------------------------------ Spesfic Items With skill plugin reducton ------------------------------------
+new IngredientElement(typeof(StrawberryItem), 22, typeof(CampfireCookingSkill, typeof(CampfireCookingLavishResourcesTalent)),
+-This line Makes module plugins and skills effect ingredient quantities up to 50% with this behind there typeof skill variable.
+
+
+------------------------------------ Spesfic Items NO skill plugin reducton ------------------------------------
+new IngredientElement(typeof(CharredSausageItem), 12, true),
+-This Line Makes the ingredient quantity static and uneffected by modifiers
+
+
+------------------------------------ Tags With skill plugin reducton ------------------------------------
+new IngredientElement("Fruit", 10, typeof(CampfireCookingSkill), typeof(CampfireCookingLavishResourcesTalent)), //noloc
+-This line Calls for "Tags" Fruit Vegetable Greens Grains Crop ect to be effected by module plugins and skills effects up to 50%
+
+
+------------------------------------ Tags NO skill or plugin reducton ------------------------------------
+new IngredientElement("Vegetable", 10), //noloc
+-This line Calls for "Tags" Fruit Vegetable Greens Grains Crop ect that are not effected by plugins or skills
+

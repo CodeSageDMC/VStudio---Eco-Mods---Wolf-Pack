@@ -1,0 +1,12 @@
+Changes to the Farmers Table Tree Seeds
+Files location in \Mod\UserCode\GadgetPaPa\FarmersTableTreeSeeds\
+
+
+Changed V11_0.1.1  
+Farmers Table 
+- Added Paintable Component to Override file
+- Changed Room Material Tier for version 11
+- Moved crafting from Workbench to Carpentry Table
+
+Changed V10_0.1.2
+Added Heart Of Palm recipe to Farmers Table

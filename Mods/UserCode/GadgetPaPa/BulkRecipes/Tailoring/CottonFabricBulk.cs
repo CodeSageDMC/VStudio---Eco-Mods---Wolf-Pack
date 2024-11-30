@@ -1,0 +1,90 @@
+﻿// Copyright (c) Strange Loop Games. All rights reserved.
+// See LICENSE file in the project root for full license information.
+// 
+
+namespace Eco.Mods.TechTree
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using Eco.Gameplay.Blocks;
+    using Eco.Gameplay.Components;
+    using Eco.Gameplay.DynamicValues;
+    using Eco.Gameplay.Items;
+    using Eco.Gameplay.Objects;
+    using Eco.Gameplay.Players;
+    using Eco.Gameplay.Skills;
+    using Eco.Gameplay.Settlements;
+    using Eco.Gameplay.Systems;
+    using Eco.Gameplay.Systems.TextLinks;
+    using Eco.Shared.Localization;
+    using Eco.Shared.Serialization;
+    using Eco.Shared.Utils;
+    using Eco.Core.Items;
+    using Eco.World;
+    using Eco.World.Blocks;
+    using Eco.Gameplay.Pipes;
+    using Eco.Core.Controller;
+    using Eco.Gameplay.Items.Recipes;
+
+    [RequiresSkill(typeof(TailoringSkill), 3)]		// 1
+    [Ecopedia("Items", "Products", subPageName: "Cotton Fabric Item Small Bulk")]
+    public partial class CottonFabricBulkRecipe : RecipeFamily
+    {
+        public CottonFabricBulkRecipe()
+        {
+            var recipe = new Recipe();
+            recipe.Init(
+                name: "CottonFabricSmallBulk",  //noloc
+                displayName: Localizer.DoStr("Cotton Fabric Small Bulk"),
+                ingredients: new List<IngredientElement>
+                {
+                    new IngredientElement(typeof(CottonThreadItem), 40, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),	// 4 x 10
+                },
+                items: new List<CraftingElement>
+                {
+                    new CraftingElement<CottonFabricItem>(20)		// 1 x 10 x 2
+                });
+            this.Recipes = new List<Recipe> { recipe };
+            this.ExperienceOnCraft = 5.0f; // 0.5 x 10
+            this.LaborInCalories = CreateLaborInCaloriesValue(1000, typeof(TailoringSkill));	// 100 x 10
+            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(CottonFabricBulkRecipe), start: 10, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));		// 1 x 10
+            this.ModsPreInitialize();
+            this.Initialize(displayText: Localizer.DoStr("Cotton Fabric Small Bulk"), recipeType: typeof(CottonFabricBulkRecipe));
+            this.ModsPostInitialize();
+            CraftingComponent.AddRecipe(tableType: typeof(LoomObject), recipe: this);
+        }
+        partial void ModsPreInitialize();
+        partial void ModsPostInitialize();
+    }
+
+    [RequiresSkill(typeof(TailoringSkill), 3)]	// 1
+    public partial class WeaveCottonFabricBulkRecipe : RecipeFamily
+    {
+        public WeaveCottonFabricBulkRecipe()
+        {
+            var recipe = new Recipe();
+            recipe.Init(
+                name: "WeaveCottonFabricBulk",  //noloc
+                displayName: Localizer.DoStr("Weave Cotton Fabric Bulk"),
+                ingredients: new List<IngredientElement>
+                {
+                    new IngredientElement(typeof(CottonThreadItem), 100, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),		// 4 X 25
+                },
+                items: new List<CraftingElement>
+                {
+                    new CraftingElement<CottonFabricItem>(150),	// 2 X 25 X 3
+                });
+            this.Recipes = new List<Recipe> { recipe };
+            this.ExperienceOnCraft = 12.5f; // 0.5 X 25
+            this.LaborInCalories = CreateLaborInCaloriesValue(2000, typeof(TailoringSkill));	// 80 X 25
+            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(WeaveCottonFabricBulkRecipe), start: 25, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));	// 1 x 25
+            this.ModsPreInitialize();
+            this.Initialize(displayText: Localizer.DoStr("Weave Cotton Fabric Bulk"), recipeType: typeof(WeaveCottonFabricBulkRecipe));
+            this.ModsPostInitialize();
+            CraftingComponent.AddRecipe(tableType: typeof(AutomaticLoomObject), recipe: this);
+        }
+        partial void ModsPreInitialize();
+        partial void ModsPostInitialize();
+    }
+}
